@@ -1,38 +1,43 @@
+//Write a function that mimics the behaviour of a typewriter. Using setInterval display the word prout one character at a time (one letter per second). Once the word is written on the screen clear the interval.
 let prout = ["p", "r", "o" , "u", "t"];
+let i=0;
 function typeLetter() {
-for (let elem of prout) {
-    console.log(elem); 
-}
-}
-//setInterval(typeLetter,1000);
+    console.log(prout[i]);
+    i++;
+  }
+setInterval(typeLetter, 1000);
+clearInterval(typeLetter, 1000);
 
-/*var body = document.body;
+//Write a function that displays every second that has passed on the page since it was opened. The display should be refreshed every second. If 60 seconds are elapsed, write "a minute has passed", then "2 minutes have passed" (for 120 seconds and more), etc.
+  //Créer les éléments pour afficher le timer
+var body = document.body;
 var h1 = document.createElement("h1");
 body.appendChild(h1);
+  //Stocker la valeur des secondes
 var seconds = 0;
-setInterval(counter, 1000);
-function counter() {
+  //Démarrer la fonction à intervalle temporel
+setInterval(everySec, 1000);
+function everySec() {
     ++seconds;
-    h1.innerHTML = seconds +" seconds of happiness";
-    
+  //Écrire directement dans les éléments créés
+    h1.innerHTML = seconds +" second of happiness";
+  //Accord grammatical du nom si plusieurs secondes
+    if (seconds>1) {
+      h1.innerHTML = seconds +" seconds of happiness"
+    }
 }
+
 var h2 = document.createElement("h2");
 body.appendChild(h2);
-setTimeout(minute, 60000);
-function minute() {
-    if (seconds = 60000) {
-    h2.innerHTML = "A minute has passed";
-    body.appendChild(h2);
+var minute = 0;
+setInterval(everyMin, 60000);
+function everyMin() {
+    ++minute;
+    h2.innerHTML = minute + " minute has passed";
+    if (minute>1) {
+      h2.innerHTML = minute + " minutes has passed";
     }
-    else if (seconds = seconds*60000) {
-        var minute = 1;
-        for (minute = 1; minute >= 1; minute++) {
-            h2.innerHTML = minute + " minutes has passed";
-            body.appendChild(h2);
-        }
-    }
-}*/
-
+ }
 
 /*Example 1 : setTimeOut()
 console.log("WARNING! In exactly five seconds something will explode");
